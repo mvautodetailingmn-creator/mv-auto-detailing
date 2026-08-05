@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+@theme {
+  --color-electric: #7df9ff;
+  --color-electric-dim: #4dd8e0;
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #030304;
+  color: #f5f6f7;
+  font-family: var(--font-body);
+}
+
+::selection {
+  background: rgba(125, 249, 255, 0.25);
+  color: #fff;
+}
+
+/* Thin, unobtrusive scrollbar that fits the dark theme */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #030304;
+}
+::-webkit-scrollbar-thumb {
+  background: #1f2126;
+  border-radius: 999px;
+  border: 2px solid #030304;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #2c2f36;
+}
+
+/* Glassmorphism surface used across cards, nav, and form panels */
+.glass {
+  background: rgba(255, 255, 255, 0.045);
+  backdrop-filter: blur(24px) saturate(140%);
+  -webkit-backdrop-filter: blur(24px) saturate(140%);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+/* Border + soft glow on hover, for interactive glass surfaces */
+.glow-hover {
+  transition:
+    border-color 0.35s ease,
+    box-shadow 0.35s ease,
+    transform 0.35s ease;
+}
+.glow-hover:hover {
+  border-color: rgba(125, 249, 255, 0.35);
+  box-shadow:
+    0 0 0 1px rgba(125, 249, 255, 0.1),
+    0 20px 60px -20px rgba(125, 249, 255, 0.25);
+}
+
+.text-glow {
+  text-shadow: 0 0 40px rgba(125, 249, 255, 0.45);
+}
+
+.btn-glow {
+  box-shadow:
+    0 0 0 1px rgba(125, 249, 255, 0.4),
+    0 10px 40px -8px rgba(125, 249, 255, 0.55);
+}
+
+/* Faint fixed grid, gives the black background depth without noise */
+.bg-grid {
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
