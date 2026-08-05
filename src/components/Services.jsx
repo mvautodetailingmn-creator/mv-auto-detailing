@@ -4,24 +4,49 @@ const services = [
   {
     name: 'Interior Detail',
     price: 'from $99',
-    description:
-      'Deep vacuum, steam cleaning, leather/upholstery conditioning, and streak-free glass.',
-    features: ['Full vacuum & shampoo', 'Dash & console detail', 'Odor treatment'],
+    description: "Perfect for refreshing and restoring your vehicle's interior.",
+    features: [
+      'Full interior vacuum',
+      'Dashboard, console & trim cleaning',
+      'Carpet & floor mat cleaning',
+      'Interior window cleaning',
+    ],
   },
   {
     name: 'Exterior Detail',
     price: 'from $89',
-    description:
-      'Hand wash, clay bar treatment, wheel & tire cleaning, and a protective wax finish.',
-    features: ['Hand wash & dry', 'Clay bar treatment', 'Wax & sealant'],
+    description: "Restore your vehicle's shine with a professional exterior detail.",
+    features: [
+      'Hand wash & dry',
+      'Wheel & tire cleaning',
+      'Tire shine',
+      'Exterior window cleaning',
+    ],
   },
   {
     name: 'Full Detail Package',
     price: 'from $169',
-    description:
-      'The complete interior + exterior package for a showroom-ready finish, bumper to bumper.',
-    features: ['Everything included', 'Engine bay wipe-down', 'Priority scheduling'],
+    description: 'Complete interior and exterior detailing for a showroom-ready finish.',
+    features: [
+      'Everything in the Interior Detail package',
+      'Everything in the Exterior Detail package',
+      'Priority scheduling',
+    ],
     highlight: true,
+  },
+]
+
+// Optional add-on services, shown below the core pricing cards.
+// To add a future service (e.g. Pet Hair Removal, Stain Extraction,
+// Headlight Restoration), just append another entry to this array —
+// the layout adapts automatically as more items are added.
+const addOns = [
+  {
+    icon: '🛡️',
+    name: 'Ceramic Protection',
+    description:
+      "Long-lasting ceramic protection to help keep your vehicle cleaner and protect its finish.",
+    badge: 'Coming Soon',
   },
 ]
 
@@ -114,6 +139,69 @@ export default function Services() {
               >
                 Book This Package
               </a>
+            </motion.div>
+          ))}
+        </motion.div>
+
+        <motion.p
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, margin: '-80px' }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="mt-8 text-center text-xs text-white/40 max-w-xl mx-auto"
+        >
+          Starting prices shown. Final pricing may vary depending on vehicle size, condition, and
+          level of cleaning required.
+        </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-80px' }}
+          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+          className="text-center max-w-2xl mx-auto mt-24 mb-12"
+        >
+          <p className="text-electric text-xs font-semibold tracking-[0.2em] uppercase mb-3">
+            Add-Ons
+          </p>
+          <h3 className="font-display text-2xl sm:text-3xl font-semibold text-white tracking-tight">
+            Optional Add-On Services
+          </h3>
+          <p className="mt-4 text-white/55">
+            Enhance any package with these additional services.
+          </p>
+        </motion.div>
+
+        <motion.div
+          variants={container}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: '-80px' }}
+          className={
+            addOns.length === 1
+              ? 'flex justify-center'
+              : 'grid gap-8 sm:grid-cols-2 lg:grid-cols-3'
+          }
+        >
+          {addOns.map((addOn) => (
+            <motion.div
+              key={addOn.name}
+              variants={card}
+              whileHover={{ y: -6 }}
+              className="relative rounded-2xl p-8 flex flex-col glass glow-hover transition-shadow w-full max-w-sm"
+            >
+              {addOn.badge && (
+                <span className="absolute top-4 right-4 rounded-full bg-white/10 text-white/70 text-[11px] font-semibold px-3 py-1 tracking-wide uppercase border border-white/10">
+                  {addOn.badge}
+                </span>
+              )}
+
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-electric/10 border border-electric/20 text-2xl">
+                {addOn.icon}
+              </div>
+
+              <h4 className="mt-5 font-display text-lg font-semibold text-white">{addOn.name}</h4>
+              <p className="mt-2 text-sm text-white/55 leading-relaxed">{addOn.description}</p>
             </motion.div>
           ))}
         </motion.div>
