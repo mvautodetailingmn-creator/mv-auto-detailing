@@ -59,7 +59,7 @@ export default function Services({ onSelectService }) {
             >
               {service.highlight && (
                 <span className="absolute -top-3 left-8 rounded-full bg-electric text-black text-[11px] font-semibold px-3 py-1 tracking-wide uppercase">
-                  Most Popular
+                  Best Value
                 </span>
               )}
 

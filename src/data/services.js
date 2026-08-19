@@ -4,7 +4,7 @@ export const services = [
   {
     id: 'interior-detail',
     name: 'Interior Detail',
-    price: 'from $99',
+    price: 'Starting at $90',
     description: "Perfect for refreshing and restoring your vehicle's interior.",
     features: [
       'Full interior vacuum',
@@ -16,7 +16,7 @@ export const services = [
   {
     id: 'exterior-detail',
     name: 'Exterior Detail',
-    price: 'from $89',
+    price: 'Starting at $80',
     description: "Restore your vehicle's shine with a professional exterior detail.",
     features: [
       'Hand wash & dry',
@@ -28,8 +28,9 @@ export const services = [
   {
     id: 'full-detail',
     name: 'Full Detail Package',
-    price: 'from $169',
-    description: 'Complete interior and exterior detailing for a showroom-ready finish.',
+    price: 'Starting at $150',
+    description:
+      'Complete interior and exterior detailing for a showroom-ready finish — our best value, priced below booking Interior and Exterior separately.',
     features: [
       'Everything in the Interior Detail package',
       'Everything in the Exterior Detail package',
