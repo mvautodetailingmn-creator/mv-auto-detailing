@@ -38,6 +38,13 @@ export default function Confirmation({ booking, onBookAnother }) {
       <button type="button" onClick={onBookAnother} className={`${primaryButtonClass} mt-8`}>
         Book Another Appointment
       </button>
+
+      <p className="mt-4 text-xs text-white/40">
+        Need to change something?{' '}
+        <a href="/manage-booking" className="text-white/60 hover:text-electric underline">
+          Manage your booking
+        </a>
+      </p>
     </div>
   )
 }

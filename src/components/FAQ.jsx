@@ -11,7 +11,15 @@ const faqs = [
   },
   {
     question: 'Can I cancel or reschedule?',
-    answer: 'Yes, up to 24 hours before your appointment.',
+    answer: (
+      <>
+        Yes, up to 24 hours before your appointment —{' '}
+        <a href="/manage-booking" className="text-electric hover:underline">
+          manage your booking here
+        </a>
+        .
+      </>
+    ),
   },
   {
     question: 'How do I pay?',
