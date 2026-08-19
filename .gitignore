@@ -12,6 +12,14 @@ dist
 dist-ssr
 *.local
 
+# Environment variables (contains your real Supabase keys — never commit this)
+.env
+.env.*
+!.env.example
+
+# Supabase CLI local cache (machine-specific, not part of the schema)
+supabase/.temp
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

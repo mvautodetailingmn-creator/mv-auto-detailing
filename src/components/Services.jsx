@@ -1,54 +1,5 @@
 import { motion } from 'framer-motion'
-
-const services = [
-  {
-    name: 'Interior Detail',
-    price: 'from $99',
-    description: "Perfect for refreshing and restoring your vehicle's interior.",
-    features: [
-      'Full interior vacuum',
-      'Dashboard, console & trim cleaning',
-      'Carpet & floor mat cleaning',
-      'Interior window cleaning',
-    ],
-  },
-  {
-    name: 'Exterior Detail',
-    price: 'from $89',
-    description: "Restore your vehicle's shine with a professional exterior detail.",
-    features: [
-      'Hand wash & dry',
-      'Wheel & tire cleaning',
-      'Tire shine',
-      'Exterior window cleaning',
-    ],
-  },
-  {
-    name: 'Full Detail Package',
-    price: 'from $169',
-    description: 'Complete interior and exterior detailing for a showroom-ready finish.',
-    features: [
-      'Everything in the Interior Detail package',
-      'Everything in the Exterior Detail package',
-      'Priority scheduling',
-    ],
-    highlight: true,
-  },
-]
-
-// Optional add-on services, shown below the core pricing cards.
-// To add a future service (e.g. Pet Hair Removal, Stain Extraction,
-// Headlight Restoration), just append another entry to this array —
-// the layout adapts automatically as more items are added.
-const addOns = [
-  {
-    icon: '🛡️',
-    name: 'Ceramic Protection',
-    description:
-      "Long-lasting ceramic protection to help keep your vehicle cleaner and protect its finish.",
-    badge: 'Coming Soon',
-  },
-]
+import { services, addOns } from '../data/services'
 
 const container = {
   hidden: {},
@@ -60,7 +11,13 @@ const card = {
   show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } },
 }
 
-export default function Services() {
+export default function Services({ onSelectService }) {
+  const handleBook = (service) => {
+    onSelectService?.(service)
+    document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' })
+  }
+
+
   return (
     <section id="services" className="relative bg-black py-28">
       <div className="absolute inset-0 bg-grid opacity-40 [mask-image:radial-gradient(ellipse_70%_50%_at_50%_50%,black,transparent)]" />
@@ -129,16 +86,17 @@ export default function Services() {
                 ))}
               </ul>
 
-              <a
-                href="#contact"
-                className={`mt-8 inline-flex justify-center rounded-full px-6 py-3 text-sm font-semibold transition-all ${
+              <button
+                type="button"
+                onClick={() => handleBook(service)}
+                className={`mt-8 inline-flex justify-center rounded-full px-6 py-3 text-sm font-semibold transition-all cursor-pointer ${
                   service.highlight
                     ? 'bg-electric text-black btn-glow hover:brightness-110'
                     : 'bg-white/10 text-white hover:bg-white/15 border border-white/10'
                 }`}
               >
                 Book This Package
-              </a>
+              </button>
             </motion.div>
           ))}
         </motion.div>

@@ -64,7 +64,7 @@ export default function Hero() {
           className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4"
         >
           <a
-            href="#contact"
+            href="#booking"
             className="w-full sm:w-auto rounded-full bg-electric text-black btn-glow hover:brightness-110 transition-all px-9 py-3.5 font-semibold"
           >
             Book Your Detail
