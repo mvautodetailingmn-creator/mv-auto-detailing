@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 const points = [
   {
     title: 'We Come to You',
-    body: 'Fully mobile setup — we bring water, power, and every tool needed right to your home or office.',
+    body: 'Fully mobile setup — we bring every tool needed right to your home or office. Please have a water source and a standard electrical outlet accessible at the service location.',
     icon: (
       <path
         d="M3 13l1.5-5A2 2 0 0 1 6.4 6.5h11.2a2 2 0 0 1 1.9 1.5L21 13m-18 0v5a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-1h12v1a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-5m-18 0h18M7 16.5h.01M17 16.5h.01"

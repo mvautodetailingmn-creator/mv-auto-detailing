@@ -95,6 +95,9 @@ export default function DetailsStep({ value, onChange, onContinue, onBack }) {
             placeholder="Where should we come detail your vehicle?"
           />
           {errorText('address')}
+          <p className="mt-1.5 text-xs text-white/40">
+            Please have a water source and a standard electrical outlet accessible at this location.
+          </p>
         </div>
 
         <div>

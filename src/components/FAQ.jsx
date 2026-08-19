@@ -25,6 +25,11 @@ const faqs = [
     question: 'How do I pay?',
     answer: 'We accept Venmo, Zelle, Cash App, and cash.',
   },
+  {
+    question: 'Do I need to provide anything?',
+    answer:
+      'Yes — please have access to a water source and a standard electrical outlet at the service location. We bring every tool needed for the detail itself.',
+  },
 ]
 
 export default function FAQ() {
